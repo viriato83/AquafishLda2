@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/AquafishLda2/static/css/main.daa527cd.css",
-    "main.js": "/AquafishLda2/static/js/main.0a6434de.js",
+    "main.js": "/AquafishLda2/static/js/main.bafaa67f.js",
     "static/js/453.4597befe.chunk.js": "/AquafishLda2/static/js/453.4597befe.chunk.js",
     "static/media/Captura de ecrã 2025-03-25 142140.png": "/AquafishLda2/static/media/Captura de ecrã 2025-03-25 142140.5c89c442e926e44bd5e9.png",
     "static/media/IMG-20250325-WA0009.jpg": "/AquafishLda2/static/media/IMG-20250325-WA0009.c2c6e8a6a21eea77b245.jpg",
@@ -13,11 +13,11 @@
     "static/media/circle_14025711.png": "/AquafishLda2/static/media/circle_14025711.35f7dac9fb4536907266.png",
     "index.html": "/AquafishLda2/index.html",
     "main.daa527cd.css.map": "/AquafishLda2/static/css/main.daa527cd.css.map",
-    "main.0a6434de.js.map": "/AquafishLda2/static/js/main.0a6434de.js.map",
+    "main.bafaa67f.js.map": "/AquafishLda2/static/js/main.bafaa67f.js.map",
     "453.4597befe.chunk.js.map": "/AquafishLda2/static/js/453.4597befe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.daa527cd.css",
-    "static/js/main.0a6434de.js"
+    "static/js/main.bafaa67f.js"
   ]
 }
