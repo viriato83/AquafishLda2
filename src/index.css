@@ -1,13 +1,616 @@
-body {
+/* ✅ Reset básico */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  background-color:    #ffffff !important;
+
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+/* ✅ Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+/* ✅ Cabeçalho */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:  #0c293f;        /* Azul-marinho */
+  color: #237cbc;
+  padding: 20px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* ✅ Título */
+.titulo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ✅ Menu Desktop */
+.nav-desktop .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-desktop .nav-links li a {
+  color: #237cbc;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-desktop .nav-links li a:hover {
+  color: #ffb400;  /* Amarelo-dourado */
+}
+
+/* ✅ Menu hamburguer */
+.menu-btn {
+  display: none; 
+  background: transparent;
+  border: none;
+  color: #237cbc;
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ Menu lateral */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -320px; /* Escondido por padrão */
+  width: 300px;
+  height: 100%;
+  background: #0a0a0a;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+  transition: right 0.4s ease-in-out;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-menu.aberto {
+  right: 0;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-links li {
+  margin: 20px 0;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffb400; 
+}
+
+/* ✅ Banner */
+.banner {
+  height: 90vh;
+  background: url('https://via.placeholder.com/1600x900/237cbc/FFFFFF?text=Aquafish+Banner') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  max-width: 600px;
+  animation: fadeIn 1s ease;
+}
+
+.banner-content h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #ffb400;   /* Destaque em amarelo */
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  color: white;
+  background: #ffb400;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #f6a700;
+}
+
+/* ✅ Container de marketing */
+.container-marketing {
+  padding: 80px 40px;
+  background: #f0f0f0;
+  color: #333;
+  text-align: center;
+}
+
+/* ✅ Grid de produtos */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* ✅ Card */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Imagem do card */
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ✅ Conteúdo do card */
+.card-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  color: #237cbc; /* Azul-marinho */
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* ✅ Botão de ação */
+.btn {
+  display: inline-block;
+  background: #237cbc;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #1e5b94;
+}
+
+/* ✅ Contato */
+.contact-section {
+  background: #237cbc;
+  color: white;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+}
+
+.contact-section .btn {
+  background: white;
+  color: #237cbc;
+}
+
+.contact-section .btn:hover {
+  background: #1e5b94;
+  color: white;
+}
+
+/* ✅ Rodapé */
+.footer {
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ✅ Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ Responsividade */
+@media (max-width: 1024px) {
+  .header-container {
+   
+    text-align: center;
+  }
+ 
+  
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 70vh;
+  }
+
+  .banner-content h1 {
+    font-size: 32px;
+  }
+
+  .container-marketing {
+    padding: 60px 20px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  button.fechar-btn{
+    background-color: transparent !important;
+    color:#1e5b94 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 28px;
+  }
+
+  .banner-content p {
+    font-size: 14px;
+  }
+  .logo img{
+    width: 100px;
+  }
+  .titulo{
+   font-size: 25px;
+  }
+
+}
+
+
+
+/* <--//home */
+.home-container{
+  text-align: center;
+
+  
+}
+/* ✅ Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ✅ Botões */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  color: white;
+  background: #237cbc; 
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #1e5b94;
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: #ffb400;    /* Amarelo */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #e0a000;
+}
+
+.btn-secondary {
+  background: #237cbc;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #1e5b94;
+}
+
+/* ✅ Banner */
+.hero-section {
+ 
+  height: 50vh;
+ 
+  background: url('imagens/IMG-7.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  
+
+}
+
+.hero-content {
+  background:transparent;
+  padding: 50px;
+  border-radius: 12px;
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9); */
+  animation: fadeIn 1s ease;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* ✅ Seção Sobre */
+.about-section {
+  padding: 100px 50px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 42px;
+  color: #237cbc;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ✅ Produtos */
+.products-section {
+  background: #fff;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 42px;
+  color: #237cbc;
+  margin-bottom: 40px;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  color: #237cbc;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* ✅ Contato */
+.contact-section {
+  background: #1e5b94;
+  color: white;
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.contact-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* ✅ Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ Responsividade */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .product-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-section {
+    padding: 60px 20px;
+  }
+}
+button{
+background: #1e5b94 ;
+}
+.footer-content{
+  margin-top: 15px;
+  background: #0c293f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+}
+.contacts-container{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.about-container{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #1e5b94;
+  flex-direction: column;
+  
+}
+.about-container p{
+  max-width: 600px;
+}
+.contact-info{
+  color:#237cbc
+}
+
+.btn.btn-primary,a{
+  color:#f0f0f0 ;
+  text-decoration: none;
+}
+a{
+  text-decoration: none !important;
+  
+}
+.enc{
+  width: 600px;
+}
+.alevinos{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+.card.ale{
+  width: 800px;
+  
+}
+.card.ale img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
