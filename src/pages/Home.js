@@ -19,7 +19,8 @@ export default function Home() {
             <div className="hero-content">
               <h1>Peixe Fresco, Sabor Incomparável!</h1>
               <p>Produção e venda de tilápia com qualidade garantida.</p>
-              <a href="#products" className="btn btn-primary">Conheça Nossos Produtos</a>
+              <Link className="btn btn-primary" to="/products">Conheça Nossos Produtos</Link>
+              {/* <a href="#products" className="btn btn-primary">Conheça Nossos Produtos</a> */}
             </div>
           </section>
 

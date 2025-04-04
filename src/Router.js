@@ -6,7 +6,7 @@ import About from "./pages/About";
 
 export default function AppRouter() {
   return (
-    <Router >
+    <Router basename="/AquafishLda2" >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

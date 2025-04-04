@@ -10,8 +10,8 @@ body{
 
 }
 html, body {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
@@ -31,22 +31,43 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background:  #0c293f;        /* Azul-marinho */
+  background:  #0c293f00;        /* Azul-marinho */
   color: #237cbc;
-  padding: 20px 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  padding: 0px 40px;
   z-index: 10;
-  width: 100%;
-  position: relative;
+
+  position: fixed;
+  top: 0;
   transition: all 0.3s ease;
+  box-shadow: none; /* Sem sombra inicialmente */
+
 }
 
+.header-container.scrolled {
+ height: 15vh;
+ background: #ffffff; /* Fundo mais escuro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra mais intensa ao rolar */
+  transition: all 0.4s ease-in-out; /* Transição suave para a sombra */
+}
 /* ✅ Título */
 .titulo {
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+.titulo a{
+  font-size: 10px;
+ 
+}
+header .logo{
+  position: relative;
+  left: 4%;
+
+}
+ .about-container, .contacts-container,.container-marketing {
+  margin-top: 15vh;
+  background: #f0f0f0;
 }
 
 /* ✅ Menu Desktop */
@@ -121,39 +142,9 @@ a {
   color: #ffb400; 
 }
 
-/* ✅ Banner */
-.banner {
-  height: 90vh;
-  background: url('https://via.placeholder.com/1600x900/237cbc/FFFFFF?text=Aquafish+Banner') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1;
-}
 
-.banner-content {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
-  max-width: 600px;
-  animation: fadeIn 1s ease;
-}
 
-.banner-content h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-  color: #ffb400;   /* Destaque em amarelo */
-}
 
-.banner-content p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
 
 .cta-btn {
   display: inline-block;
@@ -271,6 +262,7 @@ a {
   text-align: center;
   padding: 20px;
   font-size: 14px;
+  
 }
 
 /* ✅ Animação */
@@ -400,20 +392,33 @@ body, html {
 
 /* ✅ Banner */
 .hero-section {
- 
-  height: 50vh;
- 
-  background: url('imagens/IMG-7.jpg') no-repeat center center/cover;
+  position: relative;
+  height: 100vh;
+  width: 100%
+  ;
+
+  background: url('imagens/banner_aquafish.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  
+  /* filter: blur(8px); */
+  background-size: cover;
 
 }
 
+.hero-section::before{
+  content: "";
+  position: absolute;
+  inset: 0; /* Ocupa toda a seção */
+  background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+  backdrop-filter: blur(2px); /* Desfoque no fundo */
+  z-index: 0;
+}
+
 .hero-content {
+  position: relative;
   background:transparent;
   padding: 50px;
   border-radius: 12px;
@@ -434,7 +439,7 @@ body, html {
 /* ✅ Seção Sobre */
 .about-section {
   padding: 100px 50px;
-  background: #ffffff;
+ background: #f0f0f0;
   text-align: center;
 }
 
@@ -562,6 +567,8 @@ background: #1e5b94 ;
   color: white;
   text-align: center;
   padding: 20px;
+  position: sticky;
+  bottom: 0% ;
 
 }
 .contacts-container{
@@ -597,7 +604,7 @@ a{
   
 }
 .enc{
-  width: 600px;
+  width: auto;
 }
 .alevinos{
   display: flex;

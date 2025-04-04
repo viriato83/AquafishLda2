@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../imagens/logo_white-removebg2.png"
+import img2 from "../imagens/circle_14025711.png"
 export default function Header() {
   const [aberto, setAberto] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [scrollTo, setScrollTo] = useState(false);
 
   // Verifica o tamanho da tela para alternar entre menu mobile e desktop
   useEffect(() => {
@@ -14,14 +16,49 @@ export default function Header() {
       }
     };
 
+    // Função de scroll
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrollTo(true);
+      } else {
+        setScrollTo(false);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    // Remove os eventos ao desmontar o componente
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
+  // Adiciona ou remove a classe 'blurred' no body
+  useEffect(() => {
+    const container= document.querySelector(".containner");
+    if (aberto) {
+      container.style.filter = 'blur(5px)';
+    } else {
+      container.style.filter = 'none';
+    }
+
+    // Limpeza para remover o desfoque ao desmontar
+    return () => {
+      document.body.style.filter = 'none';
+    };
+  }, [aberto]);
+
   return (
-    <header className=" container-fluid header-container">
-      <div className="logo"><img src="logo_white-removebg2.png" width="200px"></img></div>
-      <div className="titulo">Aquafish Lda</div>
+    <header className={`container-fluid header-container ${scrollTo ? "scrolled" : ""}`}>
+      <div className="titulo">Aquafish Lda
+      <p> 
+        
+        <a href="mailto:Aquafishlda@gmail.com"> <img class="logoF" width="15px" src={img2} alt=""/> Email:  Aquafishlda@gmail.com</a> 
+        </p>
+      </div>
+      <div className="logo"><img src={logo} width="200px"></img></div>
 
       {/* Menu para telas maiores */}
       {!isMobile && (

@@ -5,7 +5,7 @@ export default function Footer(){
         
         <footer>
          <div className="footer-content">
-            <p>&copy; 2024 AquaFish Sociedade Unipessoal. Todos os direitos reservados. 
+            <p>&copy; 2025 AquaFish Sociedade Unipessoal. Todos os direitos reservados. 
             </p> 
         
                 <a href="mailto:Aquafishlda@gmail.com"> <img class="logoF" width="15px" src={img2} alt=""/> Email:  Aquafishlda@gmail.com</a> 
