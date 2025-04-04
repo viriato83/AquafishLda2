@@ -39,7 +39,9 @@ export default function Header() {
   useEffect(() => {
     const container= document.querySelector(".containner");
     if (aberto) {
-      container.style.filter = 'blur(5px)';
+      container.style.filter = 'blur(8px)';
+      
+    
     } else {
       container.style.filter = 'none';
     }
@@ -77,8 +79,8 @@ export default function Header() {
       {isMobile && (
         <>
           <button 
-            className="menu-btn" 
-            onClick={() => setAberto(true)}
+            className={`menu-btn${aberto?" aberto":""}`}
+            onClick={() => setAberto(!aberto)}
           >
             ☰
           </button>
