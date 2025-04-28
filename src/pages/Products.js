@@ -3,9 +3,10 @@ import Header from "../components/Header";
 import img1 from "../imagens/1.jpg";
 import img2 from "../imagens/IMG-20250325-WA0009.jpg";
 import img3 from "../imagens/peixeImg3.jpg";
-import img4 from "../imagens/Captura de ecrã 2025-03-25 142140.png";
+import img4 from "../imagens/garoupa.png";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 export default function Products(){
     const produtos = [
         { id: 1, nome: "Tilápia Fresca", descricao: "Peixe saudável e saboroso.", img: img1 },
@@ -18,6 +19,12 @@ export default function Products(){
         <Header>
         </Header>
         <Container>
+        <motion.section
+          className="contact-page "
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
                     <section className="container-marketing">
                 <h2 className="section-title">Nossos Produtos</h2>
                 <p className="section-description">
@@ -40,6 +47,7 @@ export default function Products(){
                     ))}
                 </div>
                 </section>
+                </motion.section>
         </Container>
         <Footer></Footer>
         </>

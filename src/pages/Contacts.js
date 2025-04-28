@@ -1,12 +1,18 @@
 import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-
+import {motion} from "framer-motion"
 export default function Contacts() {
   return (
     <>
       <Header />
       <Container>
+      <motion.section
+          className="contact-page "
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
         <main className="contacts-container">
           <section className="contact-info">
             <h1>Entre em Contato</h1>
@@ -32,6 +38,7 @@ export default function Contacts() {
           </section>
 
         </main>
+        </motion.section>
       </Container>
       <Footer></Footer>
     </>

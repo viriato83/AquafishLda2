@@ -3,12 +3,18 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import img1 from "../imagens/IMG-20250316-WA0011.jpg"
-
+import {motion} from "framer-motion"
 export default function About() {
   return (
     <>
       <Header />
       <Container>
+      <motion.section
+          className="contact-page "
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
         <main className="about-container">
           <section className="about-intro">
             <h1>Sobre a Aquafish</h1>
@@ -48,6 +54,7 @@ export default function About() {
             </ul>
           </section>
         </main>
+        </motion.section>
       </Container>
       <Footer></Footer>
     </>
