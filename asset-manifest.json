@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/AquafishLda2/static/css/main.4e038326.css",
-    "main.js": "/AquafishLda2/static/js/main.49e680fa.js",
+    "main.js": "/AquafishLda2/static/js/main.634699e8.js",
     "static/js/453.4597befe.chunk.js": "/AquafishLda2/static/js/453.4597befe.chunk.js",
     "static/media/banner_aquafish.png": "/AquafishLda2/static/media/banner_aquafish.85405f502999c82703fb.png",
-    "static/media/Captura de ecrã 2025-03-25 142140.png": "/AquafishLda2/static/media/Captura de ecrã 2025-03-25 142140.5c89c442e926e44bd5e9.png",
     "static/media/IMG-20250325-WA0009.jpg": "/AquafishLda2/static/media/IMG-20250325-WA0009.c2c6e8a6a21eea77b245.jpg",
     "static/media/IMG-20250316-WA0011.jpg": "/AquafishLda2/static/media/IMG-20250316-WA0011.fddfca4e193bc89676cc.jpg",
+    "static/media/garoupa.png": "/AquafishLda2/static/media/garoupa.d5d9dac165daff2005a9.png",
     "static/media/1.jpg": "/AquafishLda2/static/media/1.d396f844ad42187525ae.jpg",
     "static/media/logo_white-removebg2.png": "/AquafishLda2/static/media/logo_white-removebg2.3b77a9772ef5abc348d5.png",
     "static/media/IMG-20240207-WA0072.jpg": "/AquafishLda2/static/media/IMG-20240207-WA0072.2f8301244abdb20700ef.jpg",
@@ -14,11 +14,11 @@
     "static/media/circle_14025711.png": "/AquafishLda2/static/media/circle_14025711.35f7dac9fb4536907266.png",
     "index.html": "/AquafishLda2/index.html",
     "main.4e038326.css.map": "/AquafishLda2/static/css/main.4e038326.css.map",
-    "main.49e680fa.js.map": "/AquafishLda2/static/js/main.49e680fa.js.map",
+    "main.634699e8.js.map": "/AquafishLda2/static/js/main.634699e8.js.map",
     "453.4597befe.chunk.js.map": "/AquafishLda2/static/js/453.4597befe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4e038326.css",
-    "static/js/main.49e680fa.js"
+    "static/js/main.634699e8.js"
   ]
 }
