@@ -27,12 +27,12 @@ export default function Contacts() {
               <div className="contact-item">
                 <h3>📞 Telefone</h3>
                 <p><a href="tel:+258123456789">+258 85 24 46 502</a></p>
-                <p><a href="tel:+258123456789">+258 87 40 33 507</a></p>
-                <p><a href="tel:+258123456789">+258 84 64 22 361</a></p>
+                <p><a href="tel:+258123456789">+258 87 80 07 360</a></p>
+                <p><a href="tel:+258123456789">+258 82 24 46 500</a></p>
               </div>
               <div className="contact-item">
                 <h3>📧 E-mail</h3>
-                <p><a href="mailto:Aquafishlda@gmail.com">Aquafishlda@gmail.comm</a></p>
+                <p><a href="mailto:Aquafishlda@gmail.com">aquafishlda@gmail.comm</a></p>
               </div>
             </div>
           </section>
